@@ -10,7 +10,7 @@
   (/ a 2))
 
 (define (fast-product a b c)
-  (cond ((= b 1) (+ a c))
+  (cond ((= b 0)  c)
         ((even? b) (fast-product (double a) (halve b) c))
         (else (fast-product a (- b 1) (+ a c)))))
 
