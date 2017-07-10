@@ -11,8 +11,15 @@
 (define (e k)
   (+ 2
      (cont-frac (lambda (i) 1.0)
-                (lambda (i) (if (= (remainder i 3) 2)
-                                2.0
+                (lambda (i) (if (= 0 (remainder (+ i 1) 3))
+                                (* 2 (/ (+ i 1) 3))
                                 1.0))
                 k)))
-(e 40)
+(e 3)
+(e 4)
+(e 5)
+(e 6)
+(e 7)
+(e 8)
+(e 9)
+(e 10)
