@@ -25,3 +25,7 @@
                 1.0))
 
 (sqrt 3)
+
+(provide fixed-point)
+(provide average)
+(display "****************\n")
