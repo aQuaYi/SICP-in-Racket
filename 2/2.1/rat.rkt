@@ -14,7 +14,7 @@
 
 (define (normalize-cons n d)
   (if (< d 0)
-      (cons (* n -1) (* d -1))
+      (cons (- n) (- d))
       (cons n d)))
 
 (provide number)
