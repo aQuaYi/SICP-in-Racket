@@ -6,5 +6,7 @@
 *.scm#*
 .#*.scm
 
+*.dep
+*.zo
 *.bak
 *.rkt~
