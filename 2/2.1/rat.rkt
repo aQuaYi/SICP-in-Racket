@@ -1,6 +1,6 @@
 #lang racket
 (define (gcd n d)
-  (cond ((< n d)
+  (cond ((< (abs n) (abs d))
          (gcd d n))
         ((= d 0)
          n)
@@ -10,7 +10,12 @@
 (provide make-rat)
 (define (make-rat n d)
   (let ((g (gcd n d)))
-    (cons (/ n g) (/ d g))))
+    (normalize-cons (/ n g) (/ d g))))
+
+(define (normalize-cons n d)
+  (if (< d 0)
+      (cons (* n -1) (* d -1))
+      (cons n d)))
 
 (provide number)
 (define (number x)
