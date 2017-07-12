@@ -2,26 +2,20 @@
 (require "segment.rkt")
 
 (provide make-rectangle)
-(define (make-rectangle start-point end-point)
-  (cons start-point end-point))
+(define (make-rectangle x y height width)
+  (cons (make-point x y) (cons height width)))
 
 (provide start-rectangle)
 (define (start-rectangle r)
   (car r))
 
-(provide end-rectangle)
-(define (end-rectangle r)
-  (cdr r))
-
 (provide height-rectangle)
 (define (height-rectangle r)
-  (abs (- (y-point (end-rectangle r))
-          (y-point (start-rectangle r)))))
+  (car (cdr r)))
 
 (provide width-rectangle)
 (define (width-rectangle r)
-  (abs (- (x-point (end-rectangle r))
-          (x-point (start-rectangle r)))))
+  (cdr (cdr r)))
 
 (provide circumference-rectangle)
 (define (circumference-rectangle r)

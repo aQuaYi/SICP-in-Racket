@@ -1,14 +1,8 @@
 #lang racket
-(require "rectangle-start-end-point.rkt")
+(require "rectangle-start-point-height-width.rkt")
 (require "segment.rkt")
 
-(define s (make-point 1 1))
-(print-point s)
-
-(define e (make-point 5 4))
-(print-point e)
-
-(define r (make-rectangle s e))
+(define r (make-rectangle 1 1 3 4))
 
 ;;以下使用方式没有改变
 (displayln (height-rectangle r))
