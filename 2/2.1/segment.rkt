@@ -44,9 +44,10 @@
   (display "->")
   (print-raw-point (end-segment s)))
 
+(provide print-raw-point)
 (define (print-raw-point p)
   (display "(")
   (display (x-point p))
   (display ",")
   (display (y-point p))
-  (display ")"))
+  (displayln ")"))

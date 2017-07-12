@@ -14,4 +14,3 @@
 (print-point (start-segment segment))
 (print-point (end-segment segment))
 (print-point (midpoint-segment segment))
-;(make-segment )
