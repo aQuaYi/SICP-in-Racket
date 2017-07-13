@@ -39,7 +39,8 @@ f(g(x))
 ## 用嵌套的次数表示数
 ```racket
 (define three
-  (lambda (f) (lambda (x) (f (f (f x))))))
+  (lambda (f)
+    (lambda (x) (f (f (f x))))))
 ```
 从上可以看到`three`把自己的参数`f`嵌套了3次。所以，是在用嵌套的次数表示数。
 
@@ -62,7 +63,7 @@ inc
 two
 > two 是一个过程，
 > 
->
+> 输入：**一个**接受**一个**参数x的过程f，
 > 
 > 输出：另**一个**过程(lambda (f) (lambda (x) (f (f x))))，即把f嵌套2次的过程。
 
@@ -76,7 +77,9 @@ three
 (two inc)
 > (two inc) 是一个过程，把 inc 嵌套2次的过程，
 >
-
+> 输入：inc 过程，
+>
+> 输出：inc过程嵌套3次，即(lambda (x) (inc (inc x)))
 
 ((two inc) 0)
 > ((two inc) 0) 是一个常数，2，是0被inc了2次的结果，
@@ -108,7 +111,7 @@ three
 > 这么巧， 2 + 3 = 5
 
 那如何使用 five 表示 5 呢？
-> ``
+> ```
 >(define five
 >  (lambda (f)
 >    (lambda (x) ((three f) ((two f) x)))))
