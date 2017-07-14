@@ -16,3 +16,7 @@
 (mul-interval x y)
 
 (div-interval x y)
+
+(mul-interval (div-interval x y) y)
+
+x
