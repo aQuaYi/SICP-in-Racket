@@ -7,12 +7,4 @@
 (define y
   (make-interval 1 5))
 
-(lower-bound x)
-
-(upper-bound x)
-
-(add-interval x y)
-
-(mul-interval x y)
-
-(div-interval x y)
+(sub-interval x y)
