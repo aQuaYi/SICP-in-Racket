@@ -37,3 +37,9 @@
   (make-interval (- (lower-bound x) (lower-bound y))
                  (- (upper-bound x) (upper-bound y))))
 
+(provide width)
+(define (width x)
+  (/ (- (upper-bound x) (lower-bound x))
+     2.0))
+
+
