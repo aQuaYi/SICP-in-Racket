@@ -28,9 +28,11 @@
 
 (provide div-interval)
 (define (div-interval x y)
-  (mul-interval x 
-                (make-interval (/ 1.0 (upper-bound y))
-                               (/ 1.0 (lower-bound y)))))
+  (cond ((< 0 (* (lower-bound y) (upper-bound y)))
+         (mul-interval x 
+                       (make-interval (/ 1.0 (upper-bound y))
+                                      (/ 1.0 (lower-bound y)))))
+        (else (error "divisor cross 0"))))
 
 (provide sub-interval)
 (define (sub-interval x y)
