@@ -1,7 +1,11 @@
-#lang racket
+#lang planet neil/sicp
+
 (define (reverse l)
-  (if (null? (cdr  l))
-      (car  l)
-      (cons  (reverse (cdr l)) (car l))))
+ (iter l `()) )
+
+(define (iter remain res)
+  (if (null? remain)
+      res
+      (iter (cdr remain) (cons (car remain) res))))
 
 (reverse (list 1 2 3 4 5 6 7 8 9))
