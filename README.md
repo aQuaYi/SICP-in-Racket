@@ -1,10 +1,10 @@
 # SICP in Racket
 
 ![OS](https://img.shields.io/badge/Ubuntu-18.04-orange.svg?logo=ubuntu)
-![Racket](https://img.shields.io/badge/Racket-7.3-blue.svg?logo=data:racket.svg)
 [![IDE](https://img.shields.io/badge/code-Racket-blue.svg?logo=visual-studio-code&style=flat)](https://marketplace.visualstudio.com/items?itemName=karyfoundation.racket)
+![Racket](https://img.shields.io/badge/Racket-7.3-blue.svg?logo=racket.svg)
 
-利用 Racket 语言来学习 SICP 的心得和习题解答。
+利用 Racket 来解答 SICP 习题。
 
 ## 目录
 
