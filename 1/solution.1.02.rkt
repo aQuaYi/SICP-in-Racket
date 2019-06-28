@@ -1,4 +1,5 @@
-#lang racket
+#lang sicp
+
 (/ (+ 5
       4
       (- 2 
