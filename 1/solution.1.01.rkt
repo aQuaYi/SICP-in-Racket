@@ -1,4 +1,4 @@
-#lang racket
+#lang sicp
 10
 
 (+ 5 3 4)
