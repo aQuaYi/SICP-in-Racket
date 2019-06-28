@@ -11,12 +11,14 @@
 ## 目录
 
 - [1.构造过程抽象](1)
-  - 1.1 程序设计的基本元素 [示例代码](1/1.1.rkt)
+  - 1.1 程序设计的基本元素 [示例代码](1/1.1.rkt) [1.1.7 牛顿法求平方根](1/newton-sqrt.rkt)
     - [练习 1.1](1/solution.1.01.rkt)
     - [练习 1.2](1/solution.1.02.rkt)
     - [练习 1.3](1/solution.1.03.rkt)
     - [练习 1.4](1/solution.1.04.rkt)
     - [练习 1.5](1/solution.1.05.rkt)
+    - [练习 1.6](1/solution.1.06.rkt)
+    - [练习 1.7](1/solution.1.07.rkt) [练习 1.7 new good enough](1/solution.1.07.new-good-enough.rkt)
   - 1.2 过程与它们所产生的计算
   - 1.3 用高阶函数做抽象
 - [2.构造数据现象](2)
