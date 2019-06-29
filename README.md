@@ -19,6 +19,8 @@
     - [练习 1.5](1/solution.1.05.rkt)
     - [练习 1.6](1/solution.1.06.rkt)
     - [练习 1.7](1/solution.1.07.rkt) 以及 [new good enough](1/solution.1.07.new-good-enough.rkt)
+    - [练习 1.8](1/solution.1.08.rkt)
+    - [练习 1.10](1/solution.1.10.rkt)
   - 1.2 过程与它们所产生的计算
   - 1.3 用高阶函数做抽象
 - [2.构造数据现象](2)
