@@ -1,12 +1,12 @@
 #lang racket
 (define (count-change amount)
-  (cc amount 5))
+  (iter amount 5))
 
-(define (cc amount kinds-of-coins)
+(define (iter amount kinds-of-coins)
   (cond ((= amount 0) 1)
         ((or (< amount 0) (= kinds-of-coins 0)) 0)
-        ((+ (cc amount (- kinds-of-coins 1))
-            (cc (- amount (first-denomenation kinds-of-coins)) kinds-of-coins)))))
+        ((+ (iter amount (- kinds-of-coins 1))
+            (iter (- amount (first-denomenation kinds-of-coins)) kinds-of-coins)))))
 
 (define (first-denomenation kinds-of-coins)
   (cond ((= kinds-of-coins 1) 1)
@@ -17,4 +17,6 @@
 
 (count-change 100)
 
-(count-change 11)
+(count-change 1000)
+
+(count-change 1500)
