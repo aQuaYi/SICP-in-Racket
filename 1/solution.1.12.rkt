@@ -1,4 +1,4 @@
-#lang racket
+#lang sicp
 
 (define (pascal row col)
   (cond ((or (< col 0) (< row col)) 0)
