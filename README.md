@@ -25,6 +25,7 @@
     - [练习 1.10](1/solution.1.10.rkt)
     - [斐波那契数列](1/1.2.fib.rkt)
     - [换零钱方式的统计](1/1.2.count-change.rkt)
+    - 练习 1.11 [递归](1/solution.1.11.recursion.rkt) [迭代](1/solution.1.11.iteration.rkt)
   - 1.3 用高阶函数做抽象
 - [2.构造数据现象](2)
 - [3.模块化、对象和状态](3)
