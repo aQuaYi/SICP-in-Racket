@@ -22,3 +22,7 @@ p' = pp+qq
 q' = 2pq+qq
 
 可以把p'和q'带入a''进行验算，可知其正确性。
+
+--------
+
+![solution](solution.1.19.jpg)

@@ -18,5 +18,7 @@
      (fib-iter (+ a b) a (- count 1))))
 
 (iter-fib 1)
+
 (iter-fib 8)
+
 (iter-fib 40)

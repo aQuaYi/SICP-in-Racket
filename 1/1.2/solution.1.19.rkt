@@ -1,4 +1,4 @@
-#lang racket
+#lang sicp
 (define (even? n)
   (= (remainder n 2) 0))
 
@@ -28,3 +28,9 @@
                         (- count 1)))))
 
 (fib 12)
+
+(fib 40)
+
+(fib 100)
+
+(fib 10000) ;; so easy
