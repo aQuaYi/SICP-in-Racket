@@ -1,12 +1,15 @@
 #lang sicp
-
-(define (product-iter term a next b)
+(define (accumulate combiner null-value term a next b)
   (define (iter a result)
     (if (> a b)
         result
-        (iter (next a) (* (term a)
-                          result))))
-  (iter a 1))
+        (iter (next a)
+              (combiner (term a)
+                        result))))
+  (iter a null-value))
+
+(define (product-iter term a next b)
+  (accumulate * 1 term a next b))
 
 ;; -----
 
