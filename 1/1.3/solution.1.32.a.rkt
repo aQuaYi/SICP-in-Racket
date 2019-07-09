@@ -1,10 +1,13 @@
 #lang sicp
 
-(define (product term a next b)
+(define (accumulate combiner null-value term a next b)
   (if (> a b)
-      1
-      (* (term a)
-         (product term (next a) next b))))
+      null-value
+      (combiner (term a)
+                (product term (next a) next b))))
+
+(define (product term a next b)
+  (accumulate * 1 term a next b))
 
 ;; -----
 
@@ -20,6 +23,6 @@
        (* k k)))
   (define (next k)
     (+ k 2))
-  (product term 3.0 next 100))
+  (product term 3.0 next 1000000))
 
-(quarter-pi)
+(* 4 (quarter-pi))
