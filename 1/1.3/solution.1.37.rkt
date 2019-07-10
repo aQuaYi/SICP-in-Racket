@@ -4,12 +4,12 @@
 
 (define (cont-frac n d k)
   (define (frac c)
-    (if (= c 0)
+    (if (> c k)
         0
         (/ (n c)
            (+ (d c)
-              (frac (- c 1))))))
-  (frac k))
+              (frac (+ c 1))))))
+  (frac 1))
 
 (cont-frac (lambda (i) 1.)
            (lambda (i) 1.)
