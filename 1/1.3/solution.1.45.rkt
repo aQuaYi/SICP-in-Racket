@@ -11,9 +11,8 @@
 
 ;; fixed point of transform
 
-(define tolerance 0.00000001)
-
 (define (fixed-point f first-guess)
+  (define tolerance 0.00000001)
   (define (close-enough? a b)
     (< (abs (- a b)) tolerance))
   (define (try guess)
