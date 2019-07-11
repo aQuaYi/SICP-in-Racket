@@ -1,6 +1,6 @@
 #lang sicp
 
-(define  tolerance 0.000001)
+(define tolerance 0.000001)
 
 (define (fixed-point f first-guess)
   (define (close-enough? a b)
