@@ -3,11 +3,11 @@
 ;; iterative-improve
 
 (define (iterative-improve good-enough? improve)
-  (define (try x)
+  (define (iter x)
     (if (good-enough? x)
         x
-        (try (improve x))))
-  (lambda (guess) (try guess)))
+        (iter (improve x))))
+  (lambda (guess) (iter guess)))
 
 ;; 1.1.7 sqrt
 
@@ -35,11 +35,9 @@
 
 (define (fixed-point f first-guess)
   (define tolerance 0.00000001)
-  (define (close-enough? guess)
-    (< (abs (- guess (f guess))) tolerance))
-  (define (improve guess)
-    (f guess))
-  ((iterative-improve close-enough? improve) first-guess))
+  (define (close-enough? y)
+    (< (abs (- y (f y))) tolerance))
+  ((iterative-improve close-enough? f) first-guess))
 
 (define (fixed-point-of-transform g transform guess)
   (fixed-point (transform g) guess))
