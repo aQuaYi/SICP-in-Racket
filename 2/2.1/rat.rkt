@@ -1,4 +1,7 @@
-#lang racket
+#lang sicp
+
+(#%require (only racket provide))
+
 (define (gcd n d)
   (cond ((< (abs n) (abs d))
          (gcd d n))
@@ -7,11 +10,13 @@
         (else
          (gcd d (remainder n d)))))
 
+;; 创建有理数
 (provide make-rat)
 (define (make-rat n d)
   (let ((g (gcd n d)))
     (normalize-cons (/ n g) (/ d g))))
 
+;; 确保 分母 不为负数
 (define (normalize-cons n d)
   (if (< d 0)
       (cons (- n) (- d))

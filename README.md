@@ -10,9 +10,29 @@
 
 ## `#lang sicp` 说明
 
-`(#%require "x.rkt")`
+在 `x.rkt` 文件中
 
-可以导入同目录下的其他文件。
+```rkt
+#lang sicp
+
+(#%require (only racket provide))
+
+;; provide 公开 x-func
+(provide x-func)
+(define (x-func a b)
+  (....))
+```
+
+在 `y.rkt` 文件中
+
+```rkt
+#lang sicp
+
+(#%require "x.rkt")
+
+;; 可使用 `x-func` 过程。
+(x-func 1 2)
+```
 
 ## 目录
 
@@ -72,7 +92,9 @@
     - [练习 1.46](1/1.3/solution.1.46.rkt) :star:
 - [2.构造数据现象](2)
   - [2.1 数据抽象导引](2/2.11)
-    - [练习 2.1](2/2.1/solution.2.1.rkt)
+    - [有理数的算术运算](2/2.1/rat.rkt)
+    - [练习 2.1](2/2.1/solution.2.01.rkt)
+    - [练习 2.2](2/2.1/solution.2.02.rkt)
 - [3.模块化、对象和状态](3)
 - [4.元语言抽象](4)
 - [5.寄存器机器里的计算](5)
