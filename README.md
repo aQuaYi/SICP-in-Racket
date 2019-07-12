@@ -2,7 +2,7 @@
 
 ![OS](https://img.shields.io/badge/Ubuntu-18.04-df5829.svg?logo=ubuntu)
 [![IDE](https://img.shields.io/badge/Code-Racket-blue.svg?logoColor=blue&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=karyfoundation.racket)
-[![Racket][1]]
+![Racket][1]
 
 利用 Racket 来解答 SICP 习题。
 
