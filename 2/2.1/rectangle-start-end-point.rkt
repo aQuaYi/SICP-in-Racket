@@ -1,4 +1,5 @@
 #lang racket
+
 (require "segment.rkt")
 
 (provide make-rectangle)
