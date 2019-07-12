@@ -1,4 +1,7 @@
-#lang racket
+#lang sicp
+
+(#%require (only racket provide))
+
 (provide make-point)
 (define (make-point x y)
   (cons x y))
@@ -50,4 +53,4 @@
   (display (x-point p))
   (display ",")
   (display (y-point p))
-  (displayln ")"))
+  (display ")"))
