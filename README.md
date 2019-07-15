@@ -99,6 +99,8 @@
     - [起点终点矩形](2/2.1/rectangle-start-end-point.rkt)
     - [起点高宽矩形](2/2.1/rectangle-start-point-height-width.rkt)
     - 练习 2.3 [起点终点矩形](2/2.1/solution.2.03-start-end-point.rkt) 和 [起点高宽方式](2/2.1/solution.2.03-start-point-height-width.rkt)
+    - [练习 2.4](2/2.1/solution.2.04.rkt)
+    - [练习 2.5](2/2.1/solution.2.05.rkt)
 - [3.模块化、对象和状态](3)
 - [4.元语言抽象](4)
 - [5.寄存器机器里的计算](5)

@@ -1,4 +1,5 @@
 #lang racket
+
 (define (log x base)
   (if (= 0 (remainder x base))
       (+ 1 ( log (/ x base) base))
