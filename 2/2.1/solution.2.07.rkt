@@ -1,5 +1,6 @@
-#lang racket
-(require "interval.rkt")
+#lang sicp
+
+(#%require "interval.rkt")
 
 (define x
   (make-interval  3 8))

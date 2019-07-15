@@ -1,4 +1,6 @@
-#lang racket
+#lang sicp
+
+(#%require (only racket provide))
 
 (provide make-interval)
 (define (make-interval a b)
@@ -6,6 +8,7 @@
       (cons a b)
       (cons b a)))
 
+;; 2.7 ↓↓↓
 
 (provide lower-bound)
 (define (lower-bound x)
@@ -14,6 +17,8 @@
 (provide upper-bound)
 (define (upper-bound x)
   (cdr x))
+
+;; 2.7 ↑↑↑
 
 (provide add-interval)
 (define (add-interval x y)
@@ -78,14 +83,25 @@
                                       (/ 1.0 (lower-bound y)))))
         (else (error "divisor cross 0"))))
 
+;; 2.8 ↓↓↓
+
 (provide sub-interval)
 (define (sub-interval x y)
-  (make-interval (- (lower-bound x) (lower-bound y))
-                 (- (upper-bound x) (upper-bound y))))
+  (make-interval (- (lower-bound x) (upper-bound y))
+                 (- (upper-bound x) (lower-bound y))))
+
+;; 2.8 ↑↑↑
 
 (provide width)
 (define (width x)
   (/ (- (upper-bound x) (lower-bound x))
      2.0))
 
-
+(provide display-interval)
+(define (display-interval i)
+  (newline)
+  (display "[")
+  (display (lower-bound i))
+  (display ",")
+  (display (upper-bound i))
+  (display "]"))
