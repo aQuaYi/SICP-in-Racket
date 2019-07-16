@@ -10,13 +10,8 @@
 
 ;; 2.7 ↓↓↓
 
-(provide lower-bound)
-(define (lower-bound x)
-  (car x))
-
-(provide upper-bound)
-(define (upper-bound x)
-  (cdr x))
+(define (upper-bound interval) (max (car interval) (cdr interval))) 
+(define (lower-bound interval) (min (car interval) (cdr interval))) 
 
 ;; 2.7 ↑↑↑
 
@@ -24,12 +19,6 @@
 (define (add-interval x y)
   (make-interval (+ (lower-bound x) (lower-bound y))
                  (+ (upper-bound x) (upper-bound y))))
-
-(define (positive? x)
-  (< 0 (lower-bound x)))
-
-(define (negative? x)
-  (> 0 (upper-bound x)))
 
 (provide mul-interval-cond)
 (define (mul-interval-cond x y)
@@ -75,13 +64,17 @@
     (make-interval (min p1 p2 p3 p4)
                    (max p1 p2 p3 p4))))
 
+;; 2.10 ↓↓↓
+
 (provide div-interval)
 (define (div-interval x y)
-  (cond ((< 0 (* (lower-bound y) (upper-bound y)))
-         (mul-interval x 
-                       (make-interval (/ 1.0 (upper-bound y))
-                                      (/ 1.0 (lower-bound y)))))
-        (else (error "divisor cross 0"))))
+  (if (<= (* (lower-bound y) (upper-bound y)) 0)
+      (error "divisor cross 0")
+      (mul-interval x
+                    (make-interval (/ 1.0 (upper-bound y))
+                                   (/ 1.0 (lower-bound y))))))
+
+;; 2.10 ↑↑↑
 
 ;; 2.8 ↓↓↓
 
@@ -92,10 +85,14 @@
 
 ;; 2.8 ↑↑↑
 
+;; 2.9 ↓↓↓
+
 (provide width)
 (define (width x)
   (/ (- (upper-bound x) (lower-bound x))
      2.0))
+
+;; 2.9 ↑↑↑
 
 (provide display-interval)
 (define (display-interval i)

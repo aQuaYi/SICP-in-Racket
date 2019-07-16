@@ -6,7 +6,7 @@
   (make-interval  3 8))
 
 (define y
-  (make-interval 1 5))
+  (make-interval 2 7))
 
 (display-interval x)
 

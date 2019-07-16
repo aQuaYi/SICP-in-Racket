@@ -10,6 +10,6 @@
 (define z
   (make-interval -1 1))
 
-(div-interval x y)
+(display-interval (div-interval x y))
 
-(div-interval x z)
+(display-interval (div-interval x z))

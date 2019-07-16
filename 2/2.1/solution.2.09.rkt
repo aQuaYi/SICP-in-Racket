@@ -1,22 +1,27 @@
-#lang racket
+#lang sicp
 
-(require "interval.rkt")
+(#%require "interval.rkt")
 
-(define xa 7)
-(define xb 8)
-(define ya 6)
-(define yb 9)
 (define x
-  (make-interval xa xb))
+  (make-interval 7 8))
 (define y
-  (make-interval ya yb))
+  (make-interval 4 9))
+
+(display-interval x)
+(newline)
+(display (width x))
+
+(display-interval y)
+(newline)
+(display (width y))
+(newline)
 
 (= (width (add-interval x y))
    (+ (width x)
       (width y)))
 
 (= (width (sub-interval y x))
-   (- (width y)
+   (+ (width y) ;; NOTICE: is +
       (width x)))
 
 (= (width (div-interval y x))

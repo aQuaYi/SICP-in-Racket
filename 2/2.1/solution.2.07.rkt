@@ -19,5 +19,3 @@
 (div-interval x y)
 
 (mul-interval (div-interval x y) y)
-
-x
