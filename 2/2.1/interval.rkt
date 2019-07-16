@@ -9,8 +9,9 @@
       (cons b a)))
 
 ;; 2.7 ↓↓↓
-
+(provide upper-bound)
 (define (upper-bound interval) (max (car interval) (cdr interval))) 
+(provide lower-bound)
 (define (lower-bound interval) (min (car interval) (cdr interval))) 
 
 ;; 2.7 ↑↑↑
