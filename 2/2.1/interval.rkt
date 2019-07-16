@@ -20,6 +20,8 @@
   (make-interval (+ (lower-bound x) (lower-bound y))
                  (+ (upper-bound x) (upper-bound y))))
 
+;; 2.11 ↓↓↓
+
 (provide mul-interval-cond)
 (define (mul-interval-cond x y)
   (cond ((positive? x)
@@ -54,7 +56,9 @@
                                     (* (lower-bound x) (upper-bound y)))
                                (max (* (lower-bound x) (lower-bound y))
                                     (* (upper-bound x) (upper-bound y)))))))))
-        
+
+;; 2.11 ↑↑↑
+
 (provide mul-interval)
 (define (mul-interval x y)
   (let ((p1 (* (lower-bound x) (lower-bound y)))
