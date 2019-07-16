@@ -10,6 +10,8 @@
 
 (display-interval x)
 
+(display-interval y)
+
 (display-interval (sub-interval x y))
 
 (display-interval (add-interval (sub-interval x y) y))
