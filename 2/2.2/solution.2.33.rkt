@@ -29,8 +29,8 @@
 (display "-- length --\n")
 
 (define (length sequence)
-  (accumulate (lambda (first already-acc)
-                (+ 1 already-acc))
+  (accumulate (lambda (first rest)
+                (+ 1 rest))
               0
               sequence))
 
