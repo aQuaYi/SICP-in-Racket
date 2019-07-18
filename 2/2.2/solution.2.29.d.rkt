@@ -48,21 +48,19 @@ m
 
 (display "-- c) --\n")
 
+(define (torque branch)
+  (* (branch-length branch)
+     (weight branch)))
+
 (define (balance? mobile)
-  (let ((left (left-branch mobile))
-        (right (right-branch mobile)))
-    (let ((left-length (branch-length left))
-          (left-structure (branch-structure left))
-          (left-weight (weight left))       
-          (right-length (branch-length right))
-          (right-structure (branch-structure right))
-          (right-weight (weight right)))
-      (and (= (* left-length left-weight)
-              (* right-length right-weight))
-           (or (number? left-structure)
-               (balance? left-structure))
-           (or (number? right-structure)
-               (balance? right-structure))))))
+  (if (number? mobile)
+      #t
+      (let ((left (left-branch mobile))
+            (right (right-branch mobile)))
+        (and (= (torque left)
+                (torque right))
+             (balance? (branch-structure left))
+             (balance? (branch-structure right))))))
 
 (balance? m)
 
