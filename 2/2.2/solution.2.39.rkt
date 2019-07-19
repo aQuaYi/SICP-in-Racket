@@ -15,8 +15,8 @@
   (iter initial sequence))
 
 (define (reverse-r sequence)
-  (fold-right (lambda (first rest)
-                (append rest (list first)))
+  (fold-right (lambda (first reversed)
+                (append reversed (list first)))
               nil
               sequence))
 
