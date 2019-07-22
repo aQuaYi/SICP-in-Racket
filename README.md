@@ -140,6 +140,7 @@
     - [prime sum pairs](2/2.2/2.2.prime-sum-pairs.rkt)
     - [全排列](2/2.2/2.2.permutations.rkt)
     - [练习 2.40](2/2.2/solution.2.40.rkt)
+    - [练习 2.41](2/2.2/solution.2.41.rkt)
 - [3.模块化、对象和状态](3)
 - [4.元语言抽象](4)
 - [5.寄存器机器里的计算](5)
