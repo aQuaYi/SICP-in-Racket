@@ -7,5 +7,13 @@
 		"denomenation",
 		"expmod",
 		"ivanjovanovic"
+	],
+	"cSpell.ignoreWords": [
+		"define",
+		"display",
+		"elapsed",
+		"prime",
+		"report",
+		"time"
 	]
 }

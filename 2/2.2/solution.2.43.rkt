@@ -30,12 +30,15 @@
         (list empty-board)
         (filter
          (lambda (positions) (safe? k positions))
+         ;; bad code ↓↓↓
          (flatmap
-          (lambda (rest-of-queens)
-            (map (lambda (new-row)
-                   (adjoin-position new-row k rest-of-queens))
-                 (enumerate-interval 1 board-size)))
-          (queen-cols (- k 1))))))
+             (lambda (new-row)
+               (map (lambda (rest-of-queens)
+                      (adjoin-position new-row k rest-of-queens))
+                    (queen-cols (- k 1))))
+             (enumerate-interval 1 board-size))
+         ;; bad code ↑↑↑
+         )))
   (queen-cols board-size))
 
 (define start-time (runtime))
@@ -43,3 +46,5 @@
 (length (queens 8))
 
 (report-time start-time)
+
+;; 8^8 / 8! ≈ 416

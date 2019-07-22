@@ -2,6 +2,15 @@
 
 (#%require (only racket provide))
 
+;; tools
+
+(provide report-time)
+(define (report-time start-time)
+  (let ((elapsed-time (- (runtime) start-time)))
+    (display "-- Time Used: ")
+    (display elapsed-time)
+    (newline)))
+  
 ;; 1.2.6
 
 (provide prime?)
@@ -78,3 +87,4 @@
 (define (remove item sequence)
   (filter (lambda (x) (not (= item x)))
           sequence))
+
