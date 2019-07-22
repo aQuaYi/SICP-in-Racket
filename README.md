@@ -137,6 +137,7 @@
     - [练习 2.37](2/2.2/solution.2.37.rkt) :star:
     - [练习 2.38](2/2.2/solution.2.38.rkt)
     - [练习 2.39](2/2.2/solution.2.39.rkt) :star:
+    - [prime sum pairs](2/2.2/2.2.prime-sum-pairs.rkt)
 - [3.模块化、对象和状态](3)
 - [4.元语言抽象](4)
 - [5.寄存器机器里的计算](5)
