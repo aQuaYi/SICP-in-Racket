@@ -32,6 +32,11 @@
 
 ;; 可使用 `x-func` 过程。
 (x-func 1 2)
+
+#lang sicp
+;; 可以使用画图相关的函数
+(#%require sicp-pict)
+
 ```
 
 ## 目录
