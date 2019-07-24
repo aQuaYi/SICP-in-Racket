@@ -1,8 +1,5 @@
 #lang sicp
 
-(#%require (only sicp-pict
-                 einstein
-                 paint))
 (#%require "2.2.4.pict-lang.rkt")
 
 (paint (up-split einstein 4))
