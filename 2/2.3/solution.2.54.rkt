@@ -4,27 +4,13 @@
 
 (define b '(this (is a) list))
 
-(define (equal? A B)
-  (if (null? A)
-      (null? B)
-      (let ((a0 (car A))
-            (a-rest (cdr A))
-            (b0 (car B))
-            (b-rest (cdr B)))
-        (cond ((or (number? a0)
-                   (number? b0))
-               (and (number? a0)
-                    (number? b0)
-                    (= a0 b0)))
-              ((or (pair? a0)
-                   (pair? b0))
-               (and (pair? a0)
-                    (pair? b0)
-                    (equal? a0 b0)
-                    (equal? a-rest b-rest)))
-              (else
-               (and (eq? a0 b0)
-                    (equal? a-rest b-rest)))))))
+(define (equal? a b)
+ (or
+  (eq? a b)
+  (and (pair? a)
+       (pair? b)
+       (eq? (car a) (car b))
+       (equal? (cdr a) (cdr b)))))
 
 (equal? a a)
 
