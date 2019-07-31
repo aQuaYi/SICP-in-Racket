@@ -81,12 +81,26 @@
         (else (element-of-set? x (cdr set)))))
   
 (define (encode-symbol symbol tree)
-  (define (find symbol tree)
+  (define (search symbol tree)
     (cond ((leaf? tree) '())
           ((element-of-set? symbol (symbols (left-branch tree)))
            (cons 0 (encode-symbol symbol (left-branch tree))))
           (else
            (cons 1 (encode-symbol symbol (right-branch tree))))))
   (if (element-of-set? symbol (symbols tree))
-      (find symbol tree) 
-      (error "try to encode NO exist symbol -- ENCODE-SYMBOL" symbol)))       
+      (search symbol tree) 
+      (error "try to encode NO exist symbol -- ENCODE-SYMBOL" symbol)))
+
+;;; 2.69
+
+(provide generate-huffman-tree)
+(define (generate-huffman-tree pairs)
+  (successive-merge (make-leaf-set pairs)))
+
+(define (successive-merge leaf-set)
+  (cond ((= 1 (length leaf-set) (car leaf-set)))
+        (else (let ((first (car leaf-set))
+                    (second (cadr leaf-set))
+                    (rest (cddr leaf-set)))
+                (successive-merge  (adjoin-set (make-code-tree first second)
+                                               rest))))))
