@@ -6,7 +6,11 @@
 		"cxphoe",
 		"denomenation",
 		"expmod",
-		"ivanjovanovic"
+		"ivanjovanovic",
+		"only",
+		"provide",
+		"racket",
+		"require"
 	],
 	"cSpell.ignoreWords": [
 		"define",

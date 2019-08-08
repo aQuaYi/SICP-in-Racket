@@ -1,5 +1,7 @@
 #lang sicp
 
+(#%require (only racket displayln))
+           
 (define (make-account balance password)
   (define (withdraw amount)
     (if (>= balance amount)
@@ -30,7 +32,12 @@
     (if  (eq? pw new-pw)
          (acc old-pw m)
          (lambda (x) "Incorrect password")))
-  dispatch)
+  (if (number? (acc old-pw 'check))
+      dispatch
+      (displayln "CANNOT joint with WRONG old-pw --- MAKE-JOINT")))
+
+(define bob-acc
+  (make-joint peter-acc 'wrong-peter-acc-pw 'rosebud))
 
 (define alice-acc
   (make-joint peter-acc 'open-sesame 'rosebud))
@@ -42,3 +49,5 @@
 ((alice-acc 'rosebud 'deposit) 142)
 
 (peter-acc 'open-sesame 'check)
+
+((alice-acc 'WRONG-PW 'deposit) 2)
