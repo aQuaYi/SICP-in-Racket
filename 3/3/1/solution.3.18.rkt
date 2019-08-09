@@ -1,5 +1,6 @@
 #lang sicp
 
+;;; problem said, just cdr to look for end.
 
 (define loop '(foo bar baz)) 
 (set-cdr! (cddr loop) loop) 
@@ -11,7 +12,7 @@
 ;          v        v        v 
 ;         'foo     'bar     'baz
 
-(define (is-loop? x)
+(define (has-loop? x)
   (let ([seen '()])
     (define (check x)
       (cond ((null? x) #f)
@@ -21,6 +22,6 @@
              (check (cdr x)))))
     (check x)))
 
-(is-loop? loop)
+(has-loop? loop)
 
-(is-loop? (list 'a 'b 'c))
+(has-loop? (list 'a 'b 'c))
