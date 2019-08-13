@@ -13,13 +13,13 @@
 ;         'foo     'bar     'baz
 
 (define (has-loop? x)
-    (define (check s f)
-      (cond ((eq? s f)
+    (define (check slow fast)
+      (cond ((eq? slow fast)
              #t)
-            ((or (null? (cdr f)) (null? (cddr f)))
+            ((or (null? (cdr fast)) (null? (cddr fast)))
              #f)
             (else
-             (check (cdr s) (cddr f)))))
+             (check (cdr slow) (cddr fast)))))
     (check x (cdr x)))
 
 (has-loop? loop)
