@@ -13,8 +13,7 @@
 
 ;; tree
 
-(define (make-tree entry left right)
-  (list entry left right))
+(define (make-tree entry left right) (list entry left right))
 
 (define (entry tree) (car tree))
 
@@ -30,19 +29,20 @@
 
 (define (adjoin-set x set) 
   (cond ((null? set) (make-tree x '() '())) 
-        ((< (car x) (car (entry set))) 
+        ((< (key x) (key (entry set))) 
          (make-tree (entry set) 
                     (adjoin-set x (left-branch set)) 
                     (right-branch set))) 
-        ((> (car x) (car (entry set))) 
+        ((> (key x) (key (entry set))) 
          (make-tree (entry set) 
                     (left-branch set) 
-                    (adjoin-set x (right-branch set))))))
+                    (adjoin-set x (right-branch set))))
+        (else x)))
 
 ;;; table
 
 (define (make-tree-table)
-  (let ((table-tree (list '*table*)))
+  (let ((table-tree (list '*tree-table*)))
     (define (lookup key)
       (let ([record (assoc key (cdr table-tree))])
         (if record
@@ -52,7 +52,8 @@
       (let ([record (assoc key (cdr table-tree))])
         (if record
             (set-value! record value)
-            (set-cdr! table-tree (adjoin-set (make-entry key value) (cdr table-tree))))))
+            (set-cdr! table-tree
+                      (adjoin-set (make-entry key value) (cdr table-tree))))))
     (define (dispatch m)
       (cond ((eq? m 'lookup-proc) lookup)
             ((eq? m 'insert-proc!) insert!)
@@ -62,7 +63,6 @@
 
 ;;;
 
-  
 (define table (make-tree-table)) 
 (define get (table 'lookup-proc)) 
 (define put (table 'insert-proc!))
