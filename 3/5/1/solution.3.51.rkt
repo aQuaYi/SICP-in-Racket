@@ -1,6 +1,6 @@
 #lang sicp
 
-(define  (show x)
+(define (show x)
   (display-line x)
   x)
 
@@ -14,7 +14,7 @@
 (define (stream-cdr s) (force (cdr s)))
 
 (define (stream-map proc s)
-  (if (stream-null?)
+  (if (stream-null? s)
       the-empty-stream
       (cons-stream
        (proc (stream-car s))
@@ -34,6 +34,10 @@
 
 (define x (stream-map show (stream-enumerate-interval 0 10)))
 
+(newline)
+
 (stream-ref x 5)
+
+(newline)
 
 (stream-ref x 7)
